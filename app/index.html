@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Cover Studio — your photo, cover-star treatment</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div>
+    <h1>Vice Cover <span>Studio</span></h1>
+    <p class="tagline">Drop in your photos, pick a layout, get cover art — the multi-panel
+    poster look, a neon-sunset grade, and your name in lights. All in your browser, all offline.</p>
+  </div>
+  <div class="mast-actions">
+    <button id="surprise-btn" type="button">Surprise me</button>
+    <button id="export-png" type="button" class="primary">Export PNG</button>
+    <button id="export-jpg" type="button">Export JPG</button>
+  </div>
+</header>
+
+<main class="studio">
+  <section class="controls" aria-label="Cover controls">
+    <h2>1 · Layout</h2>
+    <div class="seg" id="layout-seg" role="group" aria-label="Panel layout">
+      <button type="button" data-layout="classic" class="on">Classic Six</button>
+      <button type="button" data-layout="grid">Grid Nine</button>
+      <button type="button" data-layout="hero">Hero</button>
+    </div>
+
+    <h2>2 · Grade</h2>
+    <div class="seg" id="grade-seg" role="group" aria-label="Colour grade">
+      <button type="button" data-grade="sunset" class="on">Sunset</button>
+      <button type="button" data-grade="neon">Neon Night</button>
+      <button type="button" data-grade="day">Day Heat</button>
+      <button type="button" data-grade="none">None</button>
+    </div>
+    <label class="check"><input type="checkbox" id="grain-toggle" checked> Film grain</label>
+
+    <h2>3 · Lettering</h2>
+    <label class="field">Title
+      <input id="title-input" type="text" maxlength="26" value="LEONIDA NIGHTS">
+    </label>
+    <label class="field">Subtitle
+      <input id="subtitle-input" type="text" maxlength="40" value="A VICE CITY STORY">
+    </label>
+
+    <h2>4 · The selected panel</h2>
+    <p class="hint" id="panel-label">Panel 1 of 6 — click any panel on the cover to select it,
+    drag the photo to reposition it.</p>
+    <div class="row">
+      <label class="upload-btn">Upload a photo
+        <input id="photo-file" type="file" accept="image/*" hidden>
+      </label>
+      <button id="clear-panel" type="button">Clear</button>
+    </div>
+    <div class="row samples" role="group" aria-label="Sample scenes">
+      <span class="samples-label">Samples:</span>
+      <button type="button" data-sample="samples/sunset.jpg">Boulevard</button>
+      <button type="button" data-sample="samples/pier.jpg">Pier</button>
+      <button type="button" data-sample="samples/portrait.jpg">Portrait</button>
+    </div>
+    <label class="field">Zoom
+      <input id="zoom-range" type="range" min="1" max="3" step="0.01" value="1">
+    </label>
+    <button id="center-btn" type="button">Re-centre photo</button>
+  </section>
+
+  <section class="stage" aria-label="Cover preview">
+    <canvas id="cover" width="1080" height="1440"></canvas>
+    <p class="stage-note">Exports at 1080 × 1440 PNG or JPG — poster size, ready to post.
+    Your photos never leave this page.</p>
+  </section>
+</main>
+
+<footer class="colophon">
+  <p>Unofficial fan tool. Not affiliated with Rockstar Games or Take-Two Interactive;
+  no official artwork is used — the look is rebuilt from gradients, panels and type.
+  Sample scenes are generated in-repo by <code>make_samples.py</code>.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
