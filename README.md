@@ -36,8 +36,10 @@ artwork is used anywhere.
 ## Screenshots
 
 `screenshots/` (listed in `shots.json`) shows: the studio as it first
-opens; the same cover re-graded to Neon Night on the Grid Nine layout;
-the Hero layout in Day Heat; and an exported PNG cover on its own.
+opens (Classic Six, Sunset grade); the Grid Nine layout re-graded to
+Neon Night; the Hero layout in Day Heat; and an exported cover on its
+own. `~/workspace/makefun/capture-screenshots.mjs` (outside this repo)
+reproduces all four.
 
 ## Hand-in
 
